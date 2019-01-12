@@ -9,6 +9,7 @@ namespace UnityEngine.XR.iOS
         public GameObject GameBoard;
         private UnityARAnchorManager unityARAnchorManager;
         private RaycastHit hit;
+        private bool isFixed = false;
 
         // Use this for initialization
         void Start () {
@@ -28,7 +29,9 @@ namespace UnityEngine.XR.iOS
 
         void OnGUI()
         {
-            UpdateGameBoard();
+            if(!isFixed) {
+                UpdateGameBoard();
+            }
             IEnumerable<ARPlaneAnchorGameObject> arpags = unityARAnchorManager.GetCurrentPlaneAnchors ();
 			foreach(var planeAnchor in arpags)
 			{
@@ -50,7 +53,10 @@ namespace UnityEngine.XR.iOS
             {
                 GameBoard.SetActive(false);
             }
+        }
 
+        public void FixGameBoard() {
+            isFixed = true;
         }
     }
 }
