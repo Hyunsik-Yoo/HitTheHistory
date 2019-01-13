@@ -17,15 +17,17 @@ public class StartButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameBoard.active)
+        if (GameBoard.activeSelf)
         {
             Image theImage = GameObject.Find("StartButton").GetComponent<Image>();
             theImage.sprite = activeButton;
+            gameObject.tag = "Active";
         }
         else
         {
             Image theImage = GameObject.Find("StartButton").GetComponent<Image>();
             theImage.sprite = inactiveButton;
+            gameObject.tag = "Inactive";
         }
     }
 }

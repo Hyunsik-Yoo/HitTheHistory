@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class goToPlay : MonoBehaviour
 {
@@ -23,7 +20,10 @@ public class goToPlay : MonoBehaviour
 
     public void onClickStart()
     {
-        introCanvas.SetActive(false);
-        playCanvas.SetActive(true);
+        if(gameObject.tag == "Active")
+        {
+            introCanvas.SetActive(false);
+            playCanvas.SetActive(true);
+        }
     }
 }

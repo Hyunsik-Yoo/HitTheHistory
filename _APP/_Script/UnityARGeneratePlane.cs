@@ -7,6 +7,7 @@ namespace UnityEngine.XR.iOS
 	{
 		public GameObject planePrefab;
         public GameObject GameBoard;
+        public GameObject startButton;
         private UnityARAnchorManager unityARAnchorManager;
         private RaycastHit hit;
         private bool isFixed = false;
@@ -56,7 +57,7 @@ namespace UnityEngine.XR.iOS
         }
 
         public void FixGameBoard() {
-            isFixed = true;
+            isFixed |= startButton.tag == "Active";
         }
     }
 }
