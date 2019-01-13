@@ -1217,7 +1217,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2144581052}
+      - m_Target: {fileID: 0}
         m_MethodName: FixGameBoard
         m_Mode: 1
         m_Arguments:
@@ -1322,7 +1322,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2144581051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31cac8edf84834043ac167deaeba16a9, type: 3}
+  m_Script: {fileID: 11500000, guid: f1fd87dca89298a4dbe20d2f12015d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planePrefab: {fileID: 1372998203143648, guid: f879aaf3eeb0c467eb22cbaf08dc97a4,
