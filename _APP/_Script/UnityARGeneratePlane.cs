@@ -58,6 +58,7 @@ namespace UnityEngine.XR.iOS
 
         public void FixGameBoard() {
             isFixed |= startButton.tag == "Active";
+            unityARAnchorManager.Destroy();
         }
     }
 }
