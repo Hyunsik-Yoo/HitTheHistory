@@ -7,8 +7,10 @@ public class HowManyCoins : MonoBehaviour
 {
     public static bool[] coinUpStatus = new bool[5];
     public GameObject[] Coins = new GameObject[5];
-    public Text scoreTextFront;
-    public Text scoreTextBack;
+    //public Text scoreTextFront;
+    //public Text scoreTextBack;
+
+    public static int gameScore;
 
 
 
@@ -24,21 +26,25 @@ public class HowManyCoins : MonoBehaviour
             Invoke("ScoreIs", 3);
         }
 
-        if(Input.GetKeyDown(KeyCode.C)){
+        if (Input.GetKeyDown(KeyCode.C))
+        {
             CheckCoinStatus();
+            ScoreIs();
         }
 
     }
     public void CheckCoinStatus()
-    {   
+    {
 
         Debug.Log("Counting coins");
         for (int i = 0; i < 5; i++)
         {
             Debug.Log(Coins[2].transform.up);
-            if(Coins[i].transform.up.y > 0){
+            if (Coins[i].transform.up.y > 0)
+            {
                 coinUpStatus[i] = true;
-            }else
+            }
+            else
             {
                 coinUpStatus[i] = false;
             }
@@ -46,7 +52,7 @@ public class HowManyCoins : MonoBehaviour
             Debug.Log(coinUpStatus[0] + " , " + coinUpStatus[1] + " , " + coinUpStatus[2] + " , " + coinUpStatus[3] + " , " + coinUpStatus[4]);
         }
     }
-    
+
     private void ScoreIs()
     {
         Debug.Log("Calculating score");
@@ -57,8 +63,11 @@ public class HowManyCoins : MonoBehaviour
             if (coinUpStatus[i]) score++;
             //Debug.Log(i + " -> " + Coins[i].transform.eulerAngles.x);
         }
-        scoreTextFront.text = score.ToString();
-        scoreTextBack.text = (coinUpStatus.Length - score).ToString();
+        //scoreTextFront.text = score.ToString();
+        //scoreTextBack.text = (coinUpStatus.Length - score).ToString();
+
+        gameScore = score;
+        Debug.Log(score);
 
     }
     /*
