@@ -9,7 +9,7 @@ public class hand : MonoBehaviour
     private RaycastHit hit;
     public Text rayText;
     public static int count = 1;
-    public float customPower = 1.0f;
+    public float customPower = 4.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class hand : MonoBehaviour
             if(hit.transform.name == "mainBook")
             {
                 barSc.speed = 0;
-                GameObject hand = Instantiate(handModel, new Vector3(hit.point.x, hit.point.y + 10, hit.point.z), Quaternion.identity);
+                GameObject hand = Instantiate(handModel, new Vector3(hit.point.x, hit.point.y + 9.5f, hit.point.z), Quaternion.identity);
                 hand.tag = "hand";
                 hand.GetComponent<Rigidbody>().mass = barSc.power * customPower;
                 hand.GetComponent<Rigidbody>().useGravity = true;

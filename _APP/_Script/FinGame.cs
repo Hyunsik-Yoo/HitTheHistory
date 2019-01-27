@@ -37,6 +37,7 @@ public class FinGame : MonoBehaviour
     public void reload(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
     public void EndOfGame()
     {
         finGamePanel.gameObject.SetActive(true);

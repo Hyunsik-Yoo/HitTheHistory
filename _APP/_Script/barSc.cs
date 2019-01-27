@@ -21,7 +21,7 @@ public class barSc : MonoBehaviour
 
         power += speed;
 
-        if (power >= 418)
+        if (power >= 836)
         {
             speed = -speed;
         }
